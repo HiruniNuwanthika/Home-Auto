@@ -1,0 +1,535 @@
+import httplib
+
+def light_on():
+    dataList={}
+
+    with open("../log/log.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+                
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/light/1")
+    #r1 = conn.getresponse()
+    return 123
+
+def light_off():
+    dataList={}
+
+    with open("../log/log.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    conn.request("GET", "/light/0")
+    r1 = conn.getresponse()
+    return r1.read()
+
+def light_check():
+    dataList={}
+
+    with open("../log/log.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/light/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 123
+
+def fan_on():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/fan/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 222
+
+def fan_off():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/fan/0")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 333
+
+def fan_check():
+    dataList={}
+
+    with open("../log/log.txt/txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/fan/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 456
+
+def autolight_on():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/photocell/0")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 456
+
+def autolight_off():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/photocell/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 159
+
+def autolight_check():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    conn.request("GET", "/photocell/data")
+    r1 = conn.getresponse()
+    r2= r1.read().split(",")[1]
+
+    if int(r2)==1:
+        return "Room is dark"
+    elif int(r2)==0:
+        return "Room is not dark"
+
+def temp_check():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/temp/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 45677
+def humid_check():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/humid/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 4598
+def pir_on():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/pir/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 498
+def pir_off():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/pir/0")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 45876
+def pir_check():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/pir/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 34324234
+def smoke_off():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/smoke/0")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 0454
+def smoke_on():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/smoke/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 343543
+def smoke_check():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    #conn.request("GET", "/smoke/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 487
+def door_lock():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/door/0")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 2423353
+def door_unlock():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/door/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 789878
+def door_check():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/door/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 47677
+def vibration_off():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/vibration/0")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 4989
+def vibration_on():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/vibration/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 87675
+def vibration_check():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/vibration/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 5555
+def leak_off():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/leak/0")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 657
+def leak_on():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/leak/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 47777
+def leak_check():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/leak/check/1")
+    #r1 = conn.getresponse()
+    #return r1.read()
+    return 4779898
+def notification():
+    dataList={}
+
+    with open("../log/log.txt.txt") as log:
+        for line in log:
+            if line!="":
+                value=line.split("=")[1].split('\n')[0].split("'")[1]
+                key=line.split("=")[0]
+                dataList[key]=value
+    
+    for key, value in dataList.iteritems():
+        if value=="1":
+            seg=key.split('_')[0]
+            
+    conn = httplib.HTTPConnection(dataList[seg+'_part1_IP'])
+    conn.request("GET", "/notification")
+    r1 = conn.getresponse()
+    response1=r1.read()
+
+    #conn = httplib.HTTPConnection(dataList[seg+'_part2_IP'])
+    #conn.request("GET", "/notification")
+    #r1 = conn.getresponse()
+    #response2= r1.read()
+
+    #response=response1+"&"+response2
+    
+    #return response
+    return 88888

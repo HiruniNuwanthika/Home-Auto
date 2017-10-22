@@ -1,0 +1,35 @@
+#version1_light_on #version1_light_off #version1_light_check #version1_fan_on #version1_fan_off #version1_fan_check #version1_autolight_on #version1_autolight_off #version1_autolight_check #version1_temp_check #version1_humid_check #version1_pir_on #version1_pir_off #version1_pir_check #version1_vibration_on #version1_vibration_off #version1_vibration_check #version1_door_lock #version1_door_unlock #version1_door_check #version1_leak_on #version1_leak_off #version1_leak_check #version1_smoke_on #version1_smoke_off #version1_smoke_check
+
+
+
+
+#version2_light_on #version2_light_off #version2_light_check #version2_fan_on #version2_fan_off #version2_fan_check #version2_autolight_on #version2_autolight_off #version2_autolight_check #version2_temp_check #version2_humid_check #version2_pir_on #version2_pir_off #version2_pir_check #version2_smoke_on #version2_smoke_off #version2_smoke_check #version2_sound_on #version2_sound_off #version2_sound_check #version2_door_lock #version2_door_unlock #version2_door_check
+
+
+
+
+#version3_light_on #version3_light_off #version3_light_check #version3_fan_on #version3_fan_off #version3_fan_check #version3_autolight_on #version3_autolight_off #version3_autolight_check #version3_temp_check #version3_humid_check #version3_pir_on #version3_pir_off #version3_pir_check #version3_smoke_on #version3_smoke_off #version3_smoke_check #version3_vibration_on #version3_vibration_off #version3_vibration_check #version3_sound_on #version3_sound_off #version3_sound_check #version3_door_lock #version3_door_unlock #version3_door_check
+
+
+
+
+#version4_light_on #version4_light_off #version4_light_check #version4_fan_on #version4_fan_off #version4_fan_check #version4_autolight_on #version4_autolight_off #version4_autolight_check #version4_temp_check #version4_humid_check #version4_pir_on #version4_pir_off #version4_pir_check #version4_smoke_on #version4_smoke_off #version4_smoke_check #version4_tankValve_on #version4_tankValve_off #version4_tankValve_check #version4_rain_on #version4_rain_off #version4_rain_check
+
+
+
+
+
+#version5_light_on #version5_light_off #version5_light_check #version5_fan_on #version5_fan_off #version5_fan_check #version5_autolight_on #version5_autolight_off #version5_autolight_check #version5_temp_check #version5_humid_check #version5_pir_on #version5_pir_off #version5_pir_check #version5_smoke_on #version5_smoke_off #version5_smoke_check #version5_rain_on #version5_rain_off #version5_rain_check
+
+
+
+
+#version6_light_on #version6_light_off #version6_light_check #version6_fan_on #version6_fan_off #version6_fan_check #version6_autolight_on #version6_autolight_off #version6_autolight_check #version6_temp_check #version6_humid_check #version6_pir_on #version6_pir_off #version6_pir_check #version6_smoke_on #version6_smoke_off #version6_smoke_check #version6_vibration_on #version6_vibration_off #version6_vibration_check #version6_soilvalve_on #version6_soilvalve_off #version6_soilvalve_check #version6_soil_on #version6_soil_off #version6_soil_check
+
+
+
+#version7_light_on #version7_light_off #version7_light_check #version7_fan_on #version7_fan_off #version7_fan_check #version7_autolight_on #version7_autolight_off #version7_autolight_check #version7_temp_check #version7_humid_check #version7_pir_on #version7_pir_off #version7_pir_check #version7_smoke_on #version7_smoke_off #version7_smoke_check #version7_vibration_on #version7_vibration_off #version7_vibration_check #version7_door_lock #version7_door_unlock #version7_door_check #version7_window_check
+
+
+
+#control_light_on #control_light_off #control_autolight_on #control_autolight_off #control_fan_on #control_fan_off #control_pir_on #control_pir_off #control_smoke_on #control_smoke_off
